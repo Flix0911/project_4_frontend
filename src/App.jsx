@@ -41,6 +41,8 @@ function App() {
       />
       {/* login route */}
       <Route path="/login" element={<Login />}/>
+      {/* Logout Route */}
+      <Route path="/logout" element={<Logout />}/>
       {/* Register */}
       <Route path="/register" element={<RegisterAndLogout />}/>
       {/* WRONG PATH ~ NOT FOUND */}
