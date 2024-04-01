@@ -1,5 +1,9 @@
+// import form
+import Form from "../components/Form"
+
 function Login(){
-    return<div>You are at Login</div>
+    // pass 2 props ~ our form
+    return<Form route="/api/token/" method="login" />
 }
 
 export default Login

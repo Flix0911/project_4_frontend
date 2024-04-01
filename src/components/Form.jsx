@@ -17,7 +17,7 @@ function Form({route, method}) {
     const navigate = useNavigate()
 
     {/* pass the prop ~ if on Login page, show as Login. OR on register, show as Register */}
-    const name = method === "login" ? "Login" : "Register"
+    const name = method === "login" ? "Login" : "Register";
 
     // function for handling submit ~ async
     const handleSubmit = async (event) => {
@@ -39,7 +39,7 @@ function Form({route, method}) {
                 navigate("/")
             // if tokens are not set ~ most likely you were registering so you now need to login
             } else {
-                naviagate("/login")
+                navigate("/login")
             }
         } catch (error) {
             alert(error)
@@ -83,3 +83,6 @@ function Form({route, method}) {
             </button>
     </form>
 }
+
+// export it out
+export default Form
