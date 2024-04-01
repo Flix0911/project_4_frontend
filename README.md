@@ -1,5 +1,10 @@
 ## Name: What's in my kitchen
 
+### Dependencies
+- Axios
+- React-Router-DOM
+- JWT-Decode
+
 # React Tree
 
 # Mockups
