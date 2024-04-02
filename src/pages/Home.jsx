@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 import api from "../api"
+import Plate from "../components/Plate"
+import Cup from "../components/Cup"
 
 // GOAL
 // View all plates and cups
@@ -154,6 +156,7 @@ function Home(){
     return<div>
         <div>
             <h2>Plates</h2>
+            {plates.map((plate) => <Plate plate={plate} onDelete={deletePlate} key={plate.id}/>)}
 
         </div>
         <h2>Create a Plate:</h2>
@@ -190,10 +193,11 @@ function Home(){
         </form>
 
         {/* ----------------------------------- */}
-        {/* HTML for a Plate  */}
+        {/* HTML for a Cup  */}
 
         <div>
             <h2>Cups</h2>
+            {cups.map((cup) => <Cup cup={cup} onDelete={deleteCup} key={cup.id}/>)}
 
         </div>
         <h2>Create a Cup:</h2>
