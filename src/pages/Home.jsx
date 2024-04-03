@@ -151,13 +151,51 @@ function Home(){
         // catch the error if needed
         }).catch((error) => (error))
     }
+
+// -----------------------------------
+// FUNCTIONS FOR UPDATING PLATES OR CUPS
+
+    // function for plate
+    const updatePlate = (plateId, plateUpdateData) => {
+        // put request to the id of the plate
+        api.put(`/api/plates/update/${plateId}/`, plateUpdateData)
+        // take the response
+        .then((res) => {
+            // response is good
+            if (res.status === 200)
+                alert("Plate has been updated")
+            // if not
+            else
+                alert("Failed to update plate")
+            getPlates();
+        // catch the error
+        }).catch((error) => alert(error))
+    }
+
+    // function for cup
+    const updateCup = (cupId, cupUpdateData) => {
+        // put request to the id of the plate
+        api.put(`/api/cups/update/${cupId}/`, cupUpdateData)
+        // take the response
+        .then((res) => {
+            // response is good
+            if (res.status === 200)
+                alert("Cup has been updated")
+            // if not
+            else
+                alert("Failed to update cup")
+            getCups();
+        // catch the error
+        }).catch((error) => alert(error))
+    }
+
 // -----------------------------------
 // HTML for a Plate
  
     return<div>
         <div>
             <h2>Plates</h2>
-            {plates.map((plate) => <Plate plate={plate} onDelete={deletePlate} key={plate.id}/>)}
+            {plates.map((plate) => <Plate plate={plate} onDelete={deletePlate} key={plate.id} updatePlate={updatePlate}/>)}
         </div>
         <h2>Create a Plate:</h2>
         <form
@@ -190,6 +228,7 @@ function Home(){
                 <br/>
                 {/* submit */}
                 <input type="submit" value="Submit"></input>
+                
         </form>
 
         {/* ----------------------------------- */}
@@ -198,7 +237,7 @@ function Home(){
         <div>
             <h2>Cups</h2>
             {/* will display from component */}
-            {cups.map((cup) => <Cup cup={cup} onDelete={deleteCup} key={cup.id}/>)}
+            {cups.map((cup) => <Cup cup={cup} onDelete={deleteCup}  key={cup.id} updateCup={updateCup}/>)}
 
         </div>
         <h2>Create a Cup:</h2>
