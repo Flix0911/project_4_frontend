@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import api from "../api"
 import Plate from "../components/Plate"
 import Cup from "../components/Cup"
+import { Link } from "react-router-dom"
 
 // GOAL
 // View all plates and cups
@@ -76,7 +77,7 @@ function Home(){
     // take in the id of the plate to delete
     const deletePlate = (id) => {
         // delete the plate that has been pulled by id
-        api.delete(`/api/plates/delete/${id}`)
+        api.delete(`/api/plates/delete/${id}/`)
         .then((res) => {
             // if response is correct, notify of deletion
             if(res.status === 204) 
@@ -94,7 +95,7 @@ function Home(){
     // function for deleting a cup ~ need the id
     const deleteCup = (id) => {
         // delete the plate at said endpoint
-        api.delete(`/api/cups/delete/${id}`)
+        api.delete(`/api/cups/delete/${id}/`)
         // take the res and check
         .then((res) => {
             // if response is good
@@ -157,7 +158,6 @@ function Home(){
         <div>
             <h2>Plates</h2>
             {plates.map((plate) => <Plate plate={plate} onDelete={deletePlate} key={plate.id}/>)}
-
         </div>
         <h2>Create a Plate:</h2>
         <form
@@ -197,6 +197,7 @@ function Home(){
 
         <div>
             <h2>Cups</h2>
+            {/* will display from component */}
             {cups.map((cup) => <Cup cup={cup} onDelete={deleteCup} key={cup.id}/>)}
 
         </div>

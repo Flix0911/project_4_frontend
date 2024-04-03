@@ -5,6 +5,8 @@ import Register from "./pages/Register"
 import Home from "./pages/Home"
 import NotFound from "./pages/Notfound"
 import ProtectedRoute from "./components/ProtectedRoute"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 
 // function for logging out
 function Logout() {
@@ -26,6 +28,7 @@ function App() {
 
   return (
     <>
+    <Header/>
     <BrowserRouter>
     <Routes>
       <Route
@@ -50,7 +53,7 @@ function App() {
 
     </Routes>
     </BrowserRouter>
-      
+      <Footer/>
     </>
   )
 }
