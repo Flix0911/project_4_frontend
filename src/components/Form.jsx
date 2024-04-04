@@ -43,6 +43,8 @@ function Form({route, method}) {
                 navigate("/login")
             }
         } catch (error) {
+            // not communicating correctly, checking for error
+            console.error(error)
             alert(error)
             // worked or didn't work, loading will be set to false
         } finally{
