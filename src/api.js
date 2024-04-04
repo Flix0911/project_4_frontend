@@ -8,7 +8,7 @@ import { ACCESS_TOKEN } from "./constants"
 const api = axios.create({
     // allows to import anything inside an environment variable file
     // CHANGE TO HOSTED ONCE READY
-    baseURL: import.meta.env.VITE_API_URL
+    baseURL: `${import.meta.env.VITE_API_URL}/api/`
 })
 
 api.interceptors.request.use(

@@ -35,7 +35,7 @@ function Form({route, method}) {
             if(method === "login") {
                 // queue up localstorage for our tokens ~ and set
                 localStorage.setItem(ACCESS_TOKEN, res.data.access);
-                localStorage.setItem(REFRESH_TOKEN, res.data.refresh)
+                localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
                 // send navigate to go to home if the above occurs
                 navigate("/")
             // if tokens are not set ~ most likely you were registering so you now need to login
