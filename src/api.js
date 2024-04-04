@@ -5,10 +5,12 @@
 import axios from "axios"
 import { ACCESS_TOKEN } from "./constants"
 
+const baseURL = import.meta.env.VITE_API_URL
+
 const api = axios.create({
     // allows to import anything inside an environment variable file
     // CHANGE TO HOSTED ONCE READY
-    baseURL: import.meta.env.VITE_API_URL
+    baseURL: baseURL
 })
 
 api.interceptors.request.use(

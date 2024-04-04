@@ -25,6 +25,8 @@ function ProtectedRoute({children}) {
         const refreshToken = localStorage.getItem(REFRESH_TOKEN)
         try {
             // send request to the backend, with refresh token, to get access token
+            const requestURL = `${api.defaults.baseURL}/api/token/refresh/`; // Log the constructed request URL
+            console.log('Request URL:', requestURL);
             // send response to the route ~ backend
             const res = await api.post("/api/token/refresh/", {
                 // pass that refresh token
