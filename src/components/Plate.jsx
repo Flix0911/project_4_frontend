@@ -39,7 +39,7 @@ function Plate({plate, onDelete, updatePlate}) {
                 // onSubmit of clicking 1st "update plate" ~ run plateupdatesubmit function
                 <form onSubmit={plateUpdateSubmit}>
                     <label htmlFor="title">Title:</label>
-                    <input
+                    <input className="form-input-home"
                         type="text"
                         id="title"
                         name="title"
@@ -48,7 +48,7 @@ function Plate({plate, onDelete, updatePlate}) {
                     />
                     <br />
                     <label htmlFor="size">Size:</label>
-                    <input
+                    <input className="form-input-home"
                         type="text"
                         id="size"
                         name="size"
@@ -56,21 +56,23 @@ function Plate({plate, onDelete, updatePlate}) {
                         onChange={(event) => setPlateSize(event.target.value)}
                     />
                     <br />
-                    <button type="submit">Submit</button>
+                    <button className="form-button-home" type="submit">Submit</button>
+                    {/* for exiting editing */}
+                    <button className="form-button-home" type="button" onClick={() => plateSetIsEditing(false)}>Exit</button>
                 </form>
             ) : (
                 <>
                     <div className="return-container">
                         {/* will send to home page the plate's title */}
-                        <p>{plate.title}</p>
+                        <p className="info-paragraph">Title: {plate.title}</p>
                         {/* will send to homepage the plate's size */}
-                        <p>{plate.size}</p>
+                        <p className="info-paragraph">Size: {plate.size}</p>
                         {/* delete said plate */}
-                        <button onClick={() => onDelete(plate.id)}>
+                        <button className="form-button-list" onClick={() => onDelete(plate.id)}>
                             Delete Plate
                         </button>
                         {/* run function to submit the updated plate */}
-                        <button onClick={handlePlateUpdate}>Update Plate</button>
+                        <button className="form-button-list" onClick={handlePlateUpdate}>Update Plate</button>
                     </div>
                 </>
             )}

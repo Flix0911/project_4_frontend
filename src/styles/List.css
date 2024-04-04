@@ -1,41 +1,44 @@
-.list-container {
-    display:  flex;
-  }
-
-.form-container-home{
+.list-container-home {
   display: flex;
+  justify-content: space-around; 
+  margin-top: 20px; 
 }
 
-.h2-container {
-  align-items: center;
+.map-container {
+  width: 30%; 
+  padding: 5px;
+  border: 1px solid #ccc; 
+  border-radius: 8px;
 }
 
-.map-container{
-    flex-direction: row;
-}
 .create-prompt-container {
-    text-align: center;
+  margin-bottom: 10px; 
+  align-items: center;
+  
 }
 
 .form-container-home {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 2px rgba(178, 38, 17, 0.1);
+  box-shadow: 0 10px 2px rgba(11, 5, 93, 0.1);
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .form-input-home {
+  width: 100%; 
+  margin-bottom: 10px; 
   padding: 10px;
   border: 1px solid #45a68f;
   border-radius: 4px;
-  text-align: center;
   box-sizing: border-box;
 }
 
 .form-button-home {
+  width: 100%; 
   padding: 10px;
-  margin: 20px 0;
+  margin-top: 10px; 
   background-color: #7966a1;
   color: rgb(246, 246, 246);
   border: none;
@@ -48,49 +51,36 @@
   background-color: #1fad1f;
 }
 
-
-  /* .plate-map {
-    color: purple;
-    flex-direction: column;
-  }
-
-  .plate-map h2 {
-    color: red;
-    flex-wrap: wrap;
-  }
-  
-  .list-plate-container, .list-cup-container {
-      font-family: "Special Elite", system-ui;
-      border-radius: 40px;
-      margin-top: 50px;
-      margin-left: 200px;
-      margin-bottom: 50px;
-      width: 30%;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      padding: 5px;
-      background-color: #eed9c4;
-      box-shadow: 15px 10px 10px #eeedea;
-      opacity: .7;
-  }
-  
-  .list-item-title {
-      text-decoration: none;
-      color: black;
-      
-  }
-
-  .list-item-size {
-    text-decoration: none;
-    color: black;
-    
+.return-container {
+  margin-top: 20px; 
+  border: .5px solid black;
+  margin-left: 85px;
+  width: 70%;
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 200px;
 }
-  
-  
-  
-  ::-webkit-scrollbar {
-      width: 2px;
-    }
-  
-   */
+
+.h2-container {
+  margin-left: 260px;
+  font-size: 30px;
+}
+
+.info-paragraph {
+  text-align: center;
+}
+
+.form-button-list {
+  width: 30%; 
+  padding: 10px;
+  margin-left: 70px;
+  background-color: #2715cd;
+  color: rgb(246, 246, 246);
+  border-radius: 4px;
+  cursor: cell;
+  font-size: 15px;
+}
+
+.form-button-list:hover {
+  background-color: #1fad1f;
+}

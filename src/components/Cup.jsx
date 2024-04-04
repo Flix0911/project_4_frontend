@@ -39,7 +39,7 @@ function Cup({cup, onDelete, updateCup}) {
                 // onSubmit of clicking 1st "update plate" ~ run plateupdatesubmit function
                 <form onSubmit={cupUpdateSubmit}>
                     <label htmlFor="title">Title:</label>
-                    <input
+                    <input className="form-input-home"
                         type="text"
                         id="title"
                         name="title"
@@ -48,7 +48,7 @@ function Cup({cup, onDelete, updateCup}) {
                     />
                     <br />
                     <label htmlFor="size">Size:</label>
-                    <input
+                    <input className="form-input-home"
                         type="text"
                         id="size"
                         name="size"
@@ -56,20 +56,22 @@ function Cup({cup, onDelete, updateCup}) {
                         onChange={(event) => setCupSize(event.target.value)}
                     />
                     <br />
-                    <button type="submit">Submit</button>
+                    <button className="form-button-home" type="submit">Submit</button>
+                    {/* for exiting editing */}
+                    <button className="form-button-home" type="button" onClick={() => cupSetIsEditing(false)}>Exit</button>
                 </form>
             ) : (
                     <div className="return-container">
                         {/* will send to home page the cup's title */}
-                        <p>{cup.title}</p>
+                        <p className="info-paragraph">Title: {cup.title}</p>
                         {/* will send to homepage the cup's size */}
-                        <p>{cup.size}</p>
+                        <p className="info-paragraph">Size: {cup.size}</p>
                         {/* delete said plate */}
-                        <button  onClick={() => onDelete(cup.id)}>
+                        <button className="form-button-list" onClick={() => onDelete(cup.id)}>
                             Delete Cup
                         </button>
                         {/* run function to submit the updated cup */}
-                        <button onClick={handleCupUpdate}>Update Cup</button>
+                        <button className="form-button-list" onClick={handleCupUpdate}>Update Cup</button>
                     </div>
             )}
         </div>
