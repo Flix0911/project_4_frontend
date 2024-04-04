@@ -12,6 +12,7 @@ const api = axios.create({
     // CHANGE TO HOSTED ONCE READY
     baseURL: baseURL
 })
+console.log(baseURL)
 
 api.interceptors.request.use(
     (config) => {
