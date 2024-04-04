@@ -1,4 +1,6 @@
-## Name: What's in my kitchen
+## Name: What's in my kitchen cabinet
+
+- **Deployed FrontEnd**: https://main--amazing-seahorse-479462.netlify.app/login
 
 ### Dependencies
 - Axios

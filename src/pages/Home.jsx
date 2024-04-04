@@ -192,7 +192,7 @@ function Home(){
 // -----------------------------------
 // HTML for a Plate
  
-    return<div>
+    return<div className="list-container">
         <div>
             <h2>Plates</h2>
             {plates.map((plate) => <Plate plate={plate} onDelete={deletePlate} key={plate.id} updatePlate={updatePlate}/>)}

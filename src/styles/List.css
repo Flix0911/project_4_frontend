@@ -1,0 +1,42 @@
+.list-container {
+
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+  }
+  
+  .list-plate-container, .list-cup-container {
+      font-family: "Special Elite", system-ui;
+      border-radius: 40px;
+      margin-top: 50px;
+      margin-left: 200px;
+      margin-bottom: 50px;
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 5px;
+      background-color: #eed9c4;
+      box-shadow: 15px 10px 10px #eeedea;
+      opacity: .7;
+  }
+  
+  .list-item-title {
+      text-decoration: none;
+      color: black;
+      
+  }
+
+  .list-item-size {
+    text-decoration: none;
+    color: black;
+    
+}
+  
+  
+  
+  ::-webkit-scrollbar {
+      width: 2px;
+    }
+  
+  

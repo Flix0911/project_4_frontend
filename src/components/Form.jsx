@@ -1,7 +1,8 @@
 import { useState } from "react";
 import api from "../api"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
+import "../styles/Form.css"
 
 // write in a function for the form
 // will work for login, register
@@ -55,7 +56,7 @@ function Form({route, method}) {
     // STYLE LATER
     className="form-container">
         {/* Pass prop of name variable */}
-        <h1>{name}</h1>
+        <h1 className="welcome-h1">{name}</h1>
         {/* Input field for username */}
         <input
             className="form-input"
@@ -81,6 +82,14 @@ function Form({route, method}) {
                 {/* Will pull name from above */}
                 {name}
             </button>
+        <div className="link-container">
+            <Link to={"/login"}>
+                <h5>Login</h5>
+            </Link>
+            <Link to={"/register"}>
+                <h5>Register</h5>
+            </Link>
+        </div>
     </form>
 }
 

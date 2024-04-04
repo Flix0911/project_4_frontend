@@ -1,5 +1,6 @@
 import React from "react"
 import { useState } from "react"
+import "../styles/List.css"
 
 function Cup({cup, onDelete, updateCup}) {
 
@@ -32,7 +33,7 @@ function Cup({cup, onDelete, updateCup}) {
 
     // render container
     return (
-        <div className="cup-container">
+        <div className="list-cup-container">
             {/* state */}
             {cupIsEditing ? (
                 // onSubmit of clicking 1st "update plate" ~ run plateupdatesubmit function
@@ -60,9 +61,9 @@ function Cup({cup, onDelete, updateCup}) {
             ) : (
                 <>
                     {/* will send to home page the cup's title */}
-                    <p className="cup-title">{cup.title}</p>
+                    <p className="list-item-title">{cup.title}</p>
                     {/* will send to homepage the cup's size */}
-                    <p className="cup-size">{cup.size}</p>
+                    <p className="list-item-size">{cup.size}</p>
                     {/* delete said plate */}
                     <button className="delete-button" onClick={() => onDelete(cup.id)}>
                         Delete Cup

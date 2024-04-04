@@ -1,0 +1,13 @@
+/* REFERENCE HEADER.JSX */
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.header {
+    display: flex;
+    font-size: 50px;
+}

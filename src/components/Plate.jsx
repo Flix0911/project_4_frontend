@@ -1,5 +1,6 @@
 import React from "react"
 import { useState } from "react"
+import "../styles/List.css"
 
 function Plate({plate, onDelete, updatePlate}) {
 
@@ -32,7 +33,7 @@ function Plate({plate, onDelete, updatePlate}) {
 
     // render container
     return (
-        <div className="plate-container">
+        <div className="list-plate-container">
             {/* state */}
             {plateIsEditing ? (
                 // onSubmit of clicking 1st "update plate" ~ run plateupdatesubmit function
@@ -60,9 +61,9 @@ function Plate({plate, onDelete, updatePlate}) {
             ) : (
                 <>
                     {/* will send to home page the plate's title */}
-                    <p className="plate-title">{plate.title}</p>
+                    <p className="list-item-title">{plate.title}</p>
                     {/* will send to homepage the plate's size */}
-                    <p className="plate-size">{plate.size}</p>
+                    <p className="list-item-size">{plate.size}</p>
                     {/* delete said plate */}
                     <button className="delete-button" onClick={() => onDelete(plate.id)}>
                         Delete Plate
