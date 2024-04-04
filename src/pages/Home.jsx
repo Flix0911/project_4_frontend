@@ -3,6 +3,7 @@ import api from "../api"
 import Plate from "../components/Plate"
 import Cup from "../components/Cup"
 import { Link } from "react-router-dom"
+import "../styles/List.css"
 
 // GOAL
 // View all plates and cups
@@ -192,86 +193,88 @@ function Home(){
 // -----------------------------------
 // HTML for a Plate
  
-    return<div className="list-container">
-        <div>
-            <h2>Plates</h2>
+    return<div className="list-container-home">
+        <div className="map-container">
+            <h2 className="create-prompt-container">Create a Plate:</h2>
+            <form className="form-container-home"
+            // use createPlate function upon submit
+            onSubmit={createPlate}>
+                {/* for Title of plate */}
+                <label htmlFor="title" className="title-container">Title:</label>
+                <br/>
+                {/* input for title of plate */}
+                <input className="form-input-home"
+                    type="text" 
+                    id="title" 
+                    name="title" 
+                    required 
+                    onChange={(event) => 
+                    setPlateTitle(event.target.value)}
+                    value={plateTitle}
+                />
+                {/* input for size of plate */}
+                <label htmlFor="size" className="size-container">Plate size:</label>
+                <br/>
+                <input className="form-input-home"
+                    type="size"
+                    id="size"
+                    name="size"
+                    required
+                    onChange={(event) => setPlateSize(event.target.value)}
+                    value={plateSize}
+                    />
+                    <br/>
+                    {/* submit */}
+                    <input type="submit" value="Submit" className="form-button-home"></input>
+                    
+            </form>
+            <h2 className="h2-container">Plates</h2>
             {plates.map((plate) => <Plate plate={plate} onDelete={deletePlate} key={plate.id} updatePlate={updatePlate}/>)}
         </div>
-        <h2>Create a Plate:</h2>
-        <form
-        // use createPlate function upon submit
-        onSubmit={createPlate}>
-            {/* for Title of plate */}
-            <label htmlFor="title">Title:</label>
-            <br/>
-            {/* input for title of plate */}
-            <input 
-                type="text" 
-                id="title" 
-                name="title" 
-                required 
-                onChange={(event) => 
-                setPlateTitle(event.target.value)}
-                value={plateTitle}
-             />
-             {/* input for size of plate */}
-             <label htmlFor="size">Plate size:</label>
-             <br/>
-             <input
-                type="size"
-                id="size"
-                name="size"
-                required
-                onChange={(event) => setPlateSize(event.target.value)}
-                value={plateSize}
-                />
-                <br/>
-                {/* submit */}
-                <input type="submit" value="Submit"></input>
-                
-        </form>
+        
 
         {/* ----------------------------------- */}
         {/* HTML for a Cup  */}
 
-        <div>
-            <h2>Cups</h2>
+        <div className="map-container">
+            <h2 className="create-prompt-container">Create a Cup:</h2>
+            <form className="form-container-home"
+            // use createCup function upon submit
+            onSubmit={createCup}>
+                {/* for Title of cup */}
+                <label htmlFor="title" className="title-container">Title:</label>
+                <br/>
+                {/* input for title of cup */}
+                <input className="form-input-home" 
+                    type="text" 
+                    id="title" 
+                    name="title" 
+                    required 
+                    onChange={(event) => 
+                    setCupTitle(event.target.value)}
+                    value={cupTitle}
+                />
+                {/* input for size of cup */}
+                <label htmlFor="size" className="size-container">Cup size:</label>
+                <br/>
+                <input className="form-input-home"
+                    type="size"
+                    id="size"
+                    name="size"
+                    required
+                    onChange={(event) => setCupSize(event.target.value)}
+                    value={cupSize}
+                    />
+                    <br/>
+                    {/* submit */}
+                    <input type="submit" value="Submit" className="form-button-home"></input>
+            </form>
+            <h2 className="h2-container">Cups</h2>
             {/* will display from component */}
             {cups.map((cup) => <Cup cup={cup} onDelete={deleteCup}  key={cup.id} updateCup={updateCup}/>)}
 
         </div>
-        <h2>Create a Cup:</h2>
-        <form
-        // use createCup function upon submit
-        onSubmit={createCup}>
-            {/* for Title of cup */}
-            <label htmlFor="title">Title:</label>
-            <br/>
-            {/* input for title of cup */}
-            <input 
-                type="text" 
-                id="title" 
-                name="title" 
-                required 
-                onChange={(event) => 
-                setCupTitle(event.target.value)}
-                value={cupTitle}
-             />
-             {/* input for size of cup */}
-             <label htmlFor="size">Plate size:</label>
-             <br/>
-             <input
-                type="size"
-                id="size"
-                name="size"
-                required
-                onChange={(event) => setCupSize(event.target.value)}
-                value={cupSize}
-                />
-                <br/>
-                {/* submit */}
-                <input type="submit" value="Submit"></input>
-        </form>
+        
     </div>
 }
 

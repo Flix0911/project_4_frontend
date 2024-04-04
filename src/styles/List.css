@@ -1,8 +1,62 @@
 .list-container {
+    display:  flex;
+  }
 
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
+.form-container-home{
+  display: flex;
+}
+
+.h2-container {
+  align-items: center;
+}
+
+.map-container{
+    flex-direction: row;
+}
+.create-prompt-container {
+    text-align: center;
+}
+
+.form-container-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 2px rgba(178, 38, 17, 0.1);
+}
+
+.form-input-home {
+  padding: 10px;
+  border: 1px solid #45a68f;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.form-button-home {
+  padding: 10px;
+  margin: 20px 0;
+  background-color: #7966a1;
+  color: rgb(246, 246, 246);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.form-button-home:hover {
+  background-color: #1fad1f;
+}
+
+
+  /* .plate-map {
+    color: purple;
+    flex-direction: column;
+  }
+
+  .plate-map h2 {
+    color: red;
+    flex-wrap: wrap;
   }
   
   .list-plate-container, .list-cup-container {
@@ -39,4 +93,4 @@
       width: 2px;
     }
   
-  
+   */

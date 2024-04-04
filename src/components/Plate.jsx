@@ -33,7 +33,7 @@ function Plate({plate, onDelete, updatePlate}) {
 
     // render container
     return (
-        <div className="list-plate-container">
+        <div>
             {/* state */}
             {plateIsEditing ? (
                 // onSubmit of clicking 1st "update plate" ~ run plateupdatesubmit function
@@ -60,16 +60,18 @@ function Plate({plate, onDelete, updatePlate}) {
                 </form>
             ) : (
                 <>
-                    {/* will send to home page the plate's title */}
-                    <p className="list-item-title">{plate.title}</p>
-                    {/* will send to homepage the plate's size */}
-                    <p className="list-item-size">{plate.size}</p>
-                    {/* delete said plate */}
-                    <button className="delete-button" onClick={() => onDelete(plate.id)}>
-                        Delete Plate
-                    </button>
-                    {/* run function to submit the updated plate */}
-                    <button onClick={handlePlateUpdate}>Update Plate</button>
+                    <div className="return-container">
+                        {/* will send to home page the plate's title */}
+                        <p>{plate.title}</p>
+                        {/* will send to homepage the plate's size */}
+                        <p>{plate.size}</p>
+                        {/* delete said plate */}
+                        <button onClick={() => onDelete(plate.id)}>
+                            Delete Plate
+                        </button>
+                        {/* run function to submit the updated plate */}
+                        <button onClick={handlePlateUpdate}>Update Plate</button>
+                    </div>
                 </>
             )}
         </div>

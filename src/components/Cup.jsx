@@ -33,7 +33,7 @@ function Cup({cup, onDelete, updateCup}) {
 
     // render container
     return (
-        <div className="list-cup-container">
+        <div>
             {/* state */}
             {cupIsEditing ? (
                 // onSubmit of clicking 1st "update plate" ~ run plateupdatesubmit function
@@ -59,18 +59,18 @@ function Cup({cup, onDelete, updateCup}) {
                     <button type="submit">Submit</button>
                 </form>
             ) : (
-                <>
-                    {/* will send to home page the cup's title */}
-                    <p className="list-item-title">{cup.title}</p>
-                    {/* will send to homepage the cup's size */}
-                    <p className="list-item-size">{cup.size}</p>
-                    {/* delete said plate */}
-                    <button className="delete-button" onClick={() => onDelete(cup.id)}>
-                        Delete Cup
-                    </button>
-                    {/* run function to submit the updated cup */}
-                    <button onClick={handleCupUpdate}>Update Cup</button>
-                </>
+                    <div className="return-container">
+                        {/* will send to home page the cup's title */}
+                        <p>{cup.title}</p>
+                        {/* will send to homepage the cup's size */}
+                        <p>{cup.size}</p>
+                        {/* delete said plate */}
+                        <button  onClick={() => onDelete(cup.id)}>
+                            Delete Cup
+                        </button>
+                        {/* run function to submit the updated cup */}
+                        <button onClick={handleCupUpdate}>Update Cup</button>
+                    </div>
             )}
         </div>
     );
