@@ -71,8 +71,11 @@ function ProtectedRoute({children}) {
             // set state of true
             setIsAuthorized(true)
         }
+        
 
     }
+
+    
 
     // check if authorized, if state is not null, check the token
     if (isAuthorized === null){

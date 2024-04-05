@@ -2,6 +2,7 @@
   "name": "kitchenfrontend",
   "private": true,
   "version": "0.0.0",
+  "proxy": "https://amazing-seahorse-479462.netlify.app/login",
   "type": "module",
   "scripts": {
     "dev": "vite",

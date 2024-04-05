@@ -124,11 +124,14 @@ function Home(){
             // take that response 
             .then((res) => {
             // if message is received for creation
-            if (res.status === 201) alert("Plate created")
+            if (res.status === 201) { alert("Plate created")
+            // empty out the field
+            setPlateSize("")
+            setPlateTitle("")
+            getPlates()
             // else, alert how it didn't work
-            else alert("Failed to record a plate")
+            }else alert("Failed to record a plate")
             // call the function upon creating a plate
-            getPlates();
             // catch the error
         }).catch((error) =>(error))
     }
@@ -142,13 +145,16 @@ function Home(){
         // take the response
         .then((res) => {
         // if status received is for creation
-        if (res.status === 201) 
+        if (res.status === 201) {
         // alert
         alert("Cup created")
+        // empty out the field
+        setCupSize("")
+        setCupTitle("")
+        getCups()
         // if not
-        else alert("Failed to record a cup")
+        } else alert("Failed to record a cup")
         // reload the new cup
-        getCups();
         // catch the error if needed
         }).catch((error) => (error))
     }
